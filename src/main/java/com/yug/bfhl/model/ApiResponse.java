@@ -1,4 +1,4 @@
-package com.yug.bfhl;
+package com.yug.bfhl.model;
 
 public class ApiResponse {
 
