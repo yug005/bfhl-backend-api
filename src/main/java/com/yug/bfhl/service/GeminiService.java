@@ -11,8 +11,10 @@ import java.util.Map;
 @Service
 public class GeminiService {
 
-    private static final String GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=";
     private static final String FALLBACK = "unknown";
+
+    @Value("${gemini.api.url}")
+    private String apiUrl;
 
     @Value("${gemini.api.key}")
     private String apiKey;
@@ -25,7 +27,7 @@ public class GeminiService {
 
     public String getOneWordAnswer(String question) {
         try {
-            String url = GEMINI_URL + apiKey;
+            String url = apiUrl + "?key=" + apiKey;
 
             Map<String, Object> part = Map.of("text", "Answer in exactly one word: " + question);
             Map<String, Object> content = Map.of("parts", List.of(part));
