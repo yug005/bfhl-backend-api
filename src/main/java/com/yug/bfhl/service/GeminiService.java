@@ -11,7 +11,7 @@ import java.util.Map;
 @Service
 public class GeminiService {
 
-    private static final String GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=";
+    private static final String GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=";
     private static final String FALLBACK = "unknown";
 
     @Value("${gemini.api.key}")

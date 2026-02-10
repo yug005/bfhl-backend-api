@@ -10,4 +10,14 @@ public class BfhlApplication {
         SpringApplication.run(BfhlApplication.class, args);
     }
 
+    // just for testing api key
+    // @Bean
+    // CommandLineRunner testGemini(GeminiService geminiService) {
+    // return args -> {
+    // String answer = geminiService.getOneWordAnswer("What is the capital of
+    // Maharashtra?");
+    // System.out.println(">>> Gemini Answer: " + answer);
+    // };
+    // }
+
 }
