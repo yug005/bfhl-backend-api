@@ -74,13 +74,35 @@ pm.test("Status is OK", () => {
 ## project structure
 
 ```
-com.yug.bfhl
-├── controller/       → HealthController, BfhlController
-├── model/            → ApiResponse
-├── service/          → GeminiService
-├── util/             → MathUtils, RequestValidator
-├── exception/        → InvalidRequestException, GlobalExceptionHandler
-└── BfhlApplication.java
+bfhl-backend-api/
+├── pom.xml
+├── README.md
+└── src/
+    └── main/
+        ├── java/
+        │   └── com/yug/bfhl/
+        │       ├── BfhlApplication.java
+        │       │
+        │       ├── controller/
+        │       │   ├── HealthController.java        GET  /health
+        │       │   └── BfhlController.java          POST /bfhl
+        │       │
+        │       ├── model/
+        │       │   └── ApiResponse.java             common response wrapper
+        │       │
+        │       ├── service/
+        │       │   └── GeminiService.java           Gemini API integration
+        │       │
+        │       ├── util/
+        │       │   ├── MathUtils.java               fibonacci, prime, lcm, hcf
+        │       │   └── RequestValidator.java        input validation
+        │       │
+        │       └── exception/
+        │           ├── InvalidRequestException.java custom runtime exception
+        │           └── GlobalExceptionHandler.java  @ControllerAdvice error handler
+        │
+        └── resources/
+            └── application.properties
 ```
 
 ## setup
